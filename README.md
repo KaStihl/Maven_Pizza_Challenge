@@ -13,3 +13,9 @@ How many pizzas are typically in an order? Do we have any bestsellers?
 How much money did we make this year? Can we indentify any seasonality in the sales?
 
 Are there any pizzas we should take of the menu, or any promotions we could leverage?
+
+DAX used:
+Total Revenue = SUMX('pizzas','pizzas'[price] * [Total Orders])
+Total Pizza sold = SUMX(order_details,order_details[quantity]* [Total Orders])
+Total Orders = COUNTROWS(order_details)
+Each Pizza Count = COUNTX(order_details,order_details[pizza_type_id])
